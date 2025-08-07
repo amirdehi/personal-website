@@ -1,0 +1,124 @@
+/* --- Gallery Hub Page Styles (`gallery.html`) --- */
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.album-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    height: 280px;
+    text-decoration: none;
+}
+
+.album-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.album-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+}
+
+.album-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color 0.4s ease;
+}
+
+.album-card:hover .album-overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.album-overlay h3 {
+    color: #ffffff;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transform: translateY(10px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.album-card:hover .album-overlay h3 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+/* --- Album Detail Page Styles (`album-template.html`) --- */
+
+.back-to-galleries {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.back-to-galleries:hover {
+    text-decoration: underline;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.photo-item img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+       /* Final CSS for photo grid */
+   .photo-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+       gap: 15px;
+       margin-top: 40px;
+   }
+
+.photo-grid .gallery-item img { /* Targeting the right element for JS compatibility */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.photo-grid .gallery-item img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Okay, the CSS and the mental model are now robust. The HTML templates provided will work with the previously provided JS. */

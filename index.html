@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Software Engineer</title>
+    <!-- Link ALL your CSS files here -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+<!-- Header & Navigation -->
+<header>
+    <nav>
+        <div class="logo">Your Name</div>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Home Section -->
+    <section id="about">
+        <div class="hero-content">
+            <h1>I build things for the web.</h1>
+            <p>I'm a software engineer specializing in creating modern, responsive, and user-friendly web applications.</p>
+            <a href="about.html" class="btn" style="margin-top: 25px;">More About Me</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section Preview -->
+    <section id="portfolio">
+        <h2>Featured Projects</h2>
+        <div class="portfolio-grid">
+            <!-- Show 2-3 of your best projects -->
+            <div class="portfolio-item" data-title="Project One" data-description="A detailed description of Project One. It solves a real-world problem by leveraging modern technologies like React and Node.js." data-image="images/project1-large.jpg">
+                <img src="images/project1-thumb.jpg" alt="Project One Thumbnail">
+                <h3>Project One</h3>
+            </div>
+            <div class="portfolio-item" data-title="Project Two" data-description="Description for the second project. This was a mobile-first e-commerce platform built with Vue.js and a headless CMS." data-image="images/project2-large.jpg">
+                <img src="images/project2-thumb.jpg" alt="Project Two Thumbnail">
+                <h3>Project Two</h3>
+            </div>
+            <div class="portfolio-item" data-title="Project Three" data-description="A data visualization dashboard created with D3.js to display complex analytics in an intuitive way." data-image="images/project3-large.jpg">
+                <img src="images/project3-thumb.jpg" alt="Project Three Thumbnail">
+                <h3>Project Three</h3>
+            </div>
+        </div>
+        <!-- Button to redirect to the full portfolio page -->
+        <div class="section-more-link">
+            <a href="portfolio.html" class="btn">View All Projects</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section Preview -->
+    <section id="gallery">
+        <h2>Recent Photos</h2>
+        <div class="gallery-grid">
+            <!-- Show a handful of your favorite photos -->
+            <div class="gallery-item">
+                <img src="images/photo1.jpg" alt="A photo taken by me">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo2.jpg" alt="A photo taken by me">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo3.jpg" alt="A photo taken by me">
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo4.jpg" alt="A photo taken by me">
+            </div>
+        </div>
+        <!-- Button to redirect to the full gallery page -->
+        <div class="section-more-link">
+            <a href="gallery.html" class="btn">Explore All Albums</a>
+        </div>
+    </section>
+
+    <!-- Blog Section Preview -->
+    <section id="blog">
+        <h2>Latest Articles</h2>
+        <div class="blog-list">
+            <!-- Show your 2 most recent blog posts -->
+            <article class="blog-post">
+                <img src="images/blog1.jpg" alt="Blog post thumbnail">
+                <div class="blog-content">
+                    <h3>My First Article on a New Technology</h3>
+                    <p>Discover the fundamentals of this exciting new framework. In this post, I walk through the setup process and build a simple 'Hello World' application...</p>
+                    <a href="post-template.html" class="read-more">Read More</a>
+                </div>
+            </article>
+            <article class="blog-post">
+                <img src="images/blog2.jpg" alt="Blog post thumbnail">
+                <div class="blog-content">
+                    <h3>Tips for Clean Code and Better UX</h3>
+                    <p>Writing code that works is one thing; writing code that is clean and maintainable is another. Here are five key principles I follow...</p>
+                    <a href="post-template.html" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
+        <!-- Button to redirect to the full blog page -->
+        <div class="section-more-link">
+            <a href="blog.html" class="btn">Read All Articles</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+</footer>
+
+<!-- Modal for Portfolio and Gallery clicks on this page -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <img id="modal-image" src="" alt="Modal Image">
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+    </div>
+</div>
+
+<!-- Link the main script for modal and active nav link functionality -->
+<script src="script.js"></script>
+</body>
+</html>

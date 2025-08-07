@@ -1,0 +1,202 @@
+/* --- Portfolio List Page Styles (`portfolio.html`) --- */
+
+.page-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-title h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    font-size: 1.2rem;
+    color: var(--primary-text);
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows the content to fill space */
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.card-content .short-description {
+    flex-grow: 1; /* Pushes the button to the bottom */
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+}
+
+
+/* --- Portfolio Detail Page Styles (`portfolio-detail.html`) --- */
+
+.project-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-header h1 {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+}
+
+.project-subtitle {
+    font-size: 1.3rem;
+    color: var(--primary-text);
+}
+
+.project-main-image img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.project-description h2 {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.project-sidebar {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.project-sidebar h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.tech-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.tech-list li {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.project-links .btn-link {
+    display: block;
+    background-color: #333;
+    color: var(--primary-text);
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.project-links .btn-link:hover {
+    background-color: #444;
+}
+
+.project-links .btn-link.github {
+    background-color: #24292e; /* GitHub color */
+}
+.project-links .btn-link.github:hover {
+    background-color: #3a4148;
+}
+
+.project-gallery h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.detail-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.detail-gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.detail-gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* --- Responsive Design for Portfolio Pages --- */
+@media (max-width: 900px) {
+    .project-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-header h1 {
+        font-size: 2.5rem;
+    }
+}

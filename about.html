@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Your Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+<!-- Header & Navigation -->
+<header>
+    <nav>
+        <div class="logo">Your Name</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about-intro" class="active">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Top Introduction Section -->
+    <section id="about-intro">
+        <div class="intro-image">
+            <img src="images/profile-picture.jpg" alt="A professional photo of me">
+        </div>
+        <div class="intro-text">
+            <h1>Hi, I'm [Your Name]</h1>
+            <p>I'm a passionate software engineer with a love for creating beautiful, functional, and user-centric digital experiences. I thrive on solving complex problems and turning ideas into reality.</p>
+        </div>
+    </section>
+
+    <!-- Detailed Bio Section -->
+    <section id="about-details">
+        <h2>My Story</h2>
+        <p>From a young age, I was fascinated by how things work, which led me to the world of programming. My journey started with simple scripts and has since evolved into building full-stack web applications. I believe that the best software is created at the intersection of powerful engineering and thoughtful design. When I'm not coding, I'm usually out with my camera, capturing the world one photo at a time.</p>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2022 - Present</div>
+                <div class="timeline-content">
+                    <h3>Senior Software Engineer</h3>
+                    <p class="company">Tech Solutions Inc.</p>
+                    <p>Led the development of a high-traffic e-commerce platform, improving performance by 30%. Mentored junior developers and championed agile methodologies.</p>
+                </div>
+            </div>
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020 - 2022</div>
+                <div class="timeline-content">
+                    <h3>Mid-Level Developer</h3>
+                    <p class="company">Creative Web Agency</p>
+                    <p>Developed custom WordPress themes and plugins for a diverse range of clients. Collaborated with designers to translate mockups into responsive websites.</p>
+                </div>
+            </div>
+            <!-- Add more items as needed -->
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>My Knowledge</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <h3>JavaScript</h3>
+                <div class="skill-level-bar"><div class="skill-level" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <h3>React & Vue.js</h3>
+                <div class="skill-level-bar"><div class="skill-level" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <h3>Node.js</h3>
+                <div class="skill-level-bar"><div class="skill-level" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <h3>HTML & CSS</h3>
+                <div class="skill-level-bar"><div class="skill-level" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <h3>Database (SQL/NoSQL)</h3>
+                <div class="skill-level-bar"><div class="skill-level" style="width: 75%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <h3>UI/UX Design</h3>
+                <div class="skill-level-bar"><div class="skill-level" style="width: 70%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="page-title">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.</p>
+        </div>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+
+        <div class="contact-form-container">
+            <form id="contact-form">
+                <input type="text" id="contact-name" placeholder="Your Name" required>
+                <input type="email" id="contact-email" placeholder="Your Email" required>
+                <textarea id="contact-message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+</footer>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // !!! IMPORTANT: CHANGE THIS TO YOUR EMAIL ADDRESS !!!
+        const recipientEmail = 'your-email@example.com';
+        const name = document.getElementById('contact-name').value;
+        const email = document.getElementById('contact-email').value;
+        const message = document.getElementById('contact-message').value;
+        const subject = `Contact Form Submission from ${name}`;
+        const body = `You have a new message from your website contact form.\n\nFrom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        window.location.href = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        alert('Thank you! Please complete the action in your email client.');
+    });
+</script>
+
+</body>
+</html>

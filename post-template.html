@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- EDIT THE TITLE FOR EACH POST -->
+    <title>Post Title - My Blog</title>
+
+    <!-- LINK ALL YOUR CSS FILES -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+<!-- Header & Navigation -->
+<header>
+    <nav>
+        <div class="logo">Your Name</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <article id="post-detail">
+        <!-- ====================================================== -->
+        <!-- EDIT ALL CONTENT BELOW FOR YOUR SPECIFIC POST          -->
+        <!-- ====================================================== -->
+
+        <div class="post-header">
+            <h1 class="post-title">Tips for Writing Clean, Maintainable Code</h1>
+            <div class="post-meta">
+                <span>Published on August 8, 2025</span>
+                <div class="post-tags-detail">
+                    <span>#SoftwareEngineering</span>
+                    <span>#BestPractices</span>
+                    <span>#CodeQuality</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-main-image">
+            <img src="images/blog1.jpg" alt="A descriptive alt text for the main image">
+        </div>
+
+        <div class="article-content">
+            <p>Writing code that simply "works" is the first step for any developer. But writing code that is clean, readable, and maintainable is the true mark of a professional. Clean code not only makes debugging easier but also ensures that your projects are scalable and a joy to work on for you and your team in the long run. Here are some key principles I follow.</p>
+
+            <h2>1. Use Meaningful, Searchable Names</h2>
+            <p>This is the cornerstone of readable code. Variable and function names should reveal their intent. Avoid single-letter variables or cryptic abbreviations that force another developer (or your future self) to guess their purpose.</p>
+
+            <blockquote>"Good code is its own best documentation. As you’re about to add a comment, ask yourself, 'How can I improve the code so that this comment isn’t needed?'" - Steve McConnell, Code Complete</blockquote>
+
+            <h2>2. Example of a Code Block</h2>
+            <p>Below is an example of a simple JavaScript function. Notice how the name `fetchUserDataById` clearly communicates its purpose. The use of `async/await` also makes the asynchronous logic clear and easy to follow.</p>
+
+            <pre class="code-block"><code class="language-javascript">// Fetches user data from an API and returns it as JSON
+async function fetchUserDataById(userId) {
+  const apiUrl = `https://api.example.com/users/${userId}`;
+  const response = await fetch(apiUrl);
+
+  if (!response.ok) {
+    throw new Error('Network response was not successful.');
+  }
+
+  const userData = await response.json();
+  return userData;
+}</code></pre>
+
+            <h2>3. Embedding a Video for a Visual Guide</h2>
+            <p>Sometimes, a visual explanation is more powerful than text alone. Here is a responsive YouTube video embed that discusses this topic further. The container ensures it looks great on all screen sizes.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLQ176FUIyIUZ1-0_p_c_Ea0s_y_A6g0Al" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <p>By consistently applying these simple rules, you can dramatically improve the quality of your codebase. It’s a discipline that pays dividends throughout the entire lifecycle of a project.</p>
+        </div>
+
+        <!-- Like/Dislike Buttons (optional feature) -->
+        <div class="post-actions">
+            <span>Enjoyed this article?</span>
+            <button class="like-btn">👍 Like (12)</button>
+            <button class="dislike-btn">👎 Dislike (1)</button>
+        </div>
+
+        <!-- Comment Section -->
+        <section class="comment-section">
+            <h2>Leave a Comment</h2>
+            <p class="comment-subtitle">Your email address will not be published. Required fields are marked *</p>
+            <form id="comment-form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment *</label>
+                    <textarea id="comment" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Comment</button>
+                <p id="form-status"></p>
+            </form>
+        </section>
+    </article>
+</main>
+
+<footer>
+    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+</footer>
+
+<!-- ====================================================== -->
+<!-- JAVASCRIPT FOR THE COMMENT FORM                        -->
+<!-- ====================================================== -->
+<script>
+    document.getElementById('comment-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // !!! IMPORTANT: CHANGE THIS TO YOUR ACTUAL EMAIL ADDRESS !!!
+        const recipientEmail = 'your-email@example.com';
+
+        const postTitle = document.querySelector('.post-title').textContent;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const comment = document.getElementById('comment').value;
+        const formStatus = document.getElementById('form-status');
+
+        const subject = `New Comment on Blog Post: "${postTitle}"`;
+
+        const body = `You have received a new comment on your blog post "${postTitle}".\n\n` +
+            `From: ${name}\n` +
+            `Email: ${email}\n\n` +
+            `Comment:\n${comment}`;
+
+        // Construct the mailto link to open the user's default email client
+        const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Trigger the email client
+        window.location.href = mailtoLink;
+
+        // Provide feedback to the user
+        formStatus.textContent = 'Thank you! Please complete sending the email in your mail client.';
+        formStatus.style.color = 'var(--accent-color)';
+    });
+</script>
+</body>
+</html>
