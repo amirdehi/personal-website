@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalImage = document.getElementById('modal-image');
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
+    const modalDetailsBtn = document.getElementById('modal-details-btn');
     const closeButton = document.querySelector('.close-button');
 
     // Portfolio Modals
@@ -34,14 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             const title = item.getAttribute('data-title');
             const description = item.getAttribute('data-description');
+            const detailUrl = item.getAttribute('data-detail-url');
             const imageSrc = item.getAttribute('data-image');
 
             modalTitle.textContent = title;
             modalDescription.textContent = description;
             modalImage.src = imageSrc;
 
+            modalDetailsBtn.href = detailUrl;
+            modalDetailsBtn.textContent = 'View Full Project';
+
             modalTitle.style.display = 'block';
             modalDescription.style.display = 'block';
+            modalDetailsBtn.style.display = 'inline-block';
             modal.style.display = 'block';
         });
     });
@@ -49,9 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gallery Modals
     document.querySelectorAll('.gallery-item img').forEach(item => {
         item.addEventListener('click', () => {
-            modalImage.src = item.src;
-            modalTitle.style.display = 'none'; // Hide title for gallery
-            modalDescription.style.display = 'none'; // Hide description for gallery
+            const description = item.getAttribute('data-description');
+            const detailUrl = item.getAttribute('data-detail-url');
+            const imageSrc = item.src;
+
+            modalDescription.textContent = description;
+            modalImage.src = imageSrc;
+
+            modalDetailsBtn.href = 'gallery.html';
+            modalDetailsBtn.textContent = 'Explore All Albums';
+
+            modalTitle.style.display = 'none';
+            modalDescription.style.display = 'block';
+            modalDetailsBtn.style.display = 'inline-block';
             modal.style.display = 'block';
         });
     });
